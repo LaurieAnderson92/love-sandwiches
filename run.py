@@ -59,6 +59,24 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print("Sales woksheet updated successfully.\n")
 
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(sales_data)
+def calculate_surplus_data(sales_row):
+    """
+    Compare sales with stock and calculate the suplus for each item type.
+
+    The suplus is defined as the sales figure subtracted from the stock:
+    - Positive surplus means waste
+    - Negative suplus means sandwiches made when stock ran out
+    """
+    print("Calculating Surplus data...\n")
+
+def main():
+    """
+    Run all program funtions
+    """
+    data = get_sales_data()
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(sales_data)
+    calculate_surplus_data(sales_data)
+
+print("Welcome to Love Sandwiches")
+main()
